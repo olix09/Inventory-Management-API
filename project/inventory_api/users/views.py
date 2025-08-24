@@ -10,6 +10,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     ViewSet for managing users with registration and profile management
     """
+    # Explicit queryset is now defined (fix for router error)
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
     
