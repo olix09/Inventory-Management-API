@@ -9,9 +9,4 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ('is_active', 'is_staff', 'date_joined')
     search_fields = ('username', 'email', 'first_name', 'last_name')
     ordering = ('-date_joined',)
-    
-    fieldsets = UserAdmin.fieldsets + (
-        ('Additional Info', {
-            'fields': ('is_active',)
-        }),
-    )
+    fieldsets = UserAdmin.fieldsets  # no duplicates
